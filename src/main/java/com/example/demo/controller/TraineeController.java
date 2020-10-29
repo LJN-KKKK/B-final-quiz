@@ -24,4 +24,9 @@ public class TraineeController {
         return traineeService.addTrainee(trainee);
     }
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Trainee> getAllTraineesByGrouped(@RequestParam(name = "grouped") boolean grouped){
+        return traineeService.getAllTraineesByGrouped(grouped);
+    }
 }
