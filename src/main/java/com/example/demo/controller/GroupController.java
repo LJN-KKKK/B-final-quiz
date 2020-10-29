@@ -3,10 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Group;
 import com.example.demo.service.GroupService;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,11 @@ public class GroupController {
     @ResponseStatus(HttpStatus.OK)
     public List<Group> autoGrouping(){
         return groupService.autoGrouping();
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Group> getAllGroup(){
+        return groupService.getAllGroup();
     }
 }

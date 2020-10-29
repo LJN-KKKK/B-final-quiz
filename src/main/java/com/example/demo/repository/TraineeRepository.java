@@ -23,5 +23,5 @@ public interface TraineeRepository extends JpaRepository<Trainee, Long> {
     @Transactional
     @Modifying(clearAutomatically = true)
     @Query(value = "update trainee t set t.group_id=?2 where t.id=?1", nativeQuery = true)
-    void updateGroupById(Long id, Long group);
+    void updateGroupById(Long id, Long groupId);
 }

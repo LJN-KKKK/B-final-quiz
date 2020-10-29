@@ -26,7 +26,6 @@ public class GroupService {
     }
 
     public List<Group> autoGrouping() {
-
         List<Trainee> traineeList = traineeRepository.findAll();
         List<Trainer> trainerList = trainerRepository.findAll();
 
@@ -35,16 +34,14 @@ public class GroupService {
         int traineeNum = traineeList.size();
         int trainerNum = trainerList.size();
 
-        if(trainerNum < min_group_num) {
-            throw new TrainerNotEnoughException("当前讲师数量不足");
-        }
+        if(trainerNum < min_group_num) { throw new TrainerNotEnoughException("当前讲师数量不足"); }
 
         Collections.shuffle(traineeList);
         Collections.shuffle(trainerList);
 
         int group_num = trainerNum/2;
         for(int i = group_num; i >= 1; i--){
-            this.createGroup("Team " + (group_num - i),
+            this.createGroup("Team " + (group_num - i + 1),
                     trainerList.subList((group_num - i) * trainerNum / group_num, (group_num - i) * trainerNum / group_num + 2),
                     traineeList.subList((i - 1) * traineeNum / group_num, i * traineeNum / group_num));
         }
@@ -81,5 +78,9 @@ public class GroupService {
         });
 
         groupRepository.deleteAll();
+    }
+
+    public List<Group> getAllGroup() {
+        return groupRepository.findAll();
     }
 }
