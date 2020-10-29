@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler({TraineeNotExistsException.class})
+    @ExceptionHandler({PersonNotExistsException.class})
     public ResponseEntity<ErrorResult> handle(RuntimeException ex) {
         ErrorResult errorResult = new ErrorResult(
                 ex.getMessage());

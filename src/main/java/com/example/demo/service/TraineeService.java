@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.exception.TraineeNotExistsException;
+import com.example.demo.exception.PersonNotExistsException;
 import com.example.demo.model.Trainee;
 import com.example.demo.repository.TraineeRepository;
 import org.springframework.stereotype.Service;
@@ -24,10 +24,9 @@ public class TraineeService {
         return traineeRepository.findAllByGrouped(grouped);
     }
 
-
     public void deleteTraineeById(long trainee_id) {
         if(!traineeRepository.existsById(trainee_id)){
-            throw new TraineeNotExistsException("trainee does not exist");
+            throw new PersonNotExistsException("trainee does not exist");
         }
         traineeRepository.deleteById(trainee_id);
     }
