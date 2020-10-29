@@ -8,9 +8,16 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler({PersonNotExistsException.class})
-    public ResponseEntity<ErrorResult> handle(RuntimeException ex) {
+    public ResponseEntity<ErrorResult> handle(PersonNotExistsException ex) {
         ErrorResult errorResult = new ErrorResult(
                 ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResult);
+    }
+
+    @ExceptionHandler({TrainerNotEnoughException.class})
+    public ResponseEntity<ErrorResult> handle(TrainerNotEnoughException ex) {
+        ErrorResult errorResult = new ErrorResult(
+                ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResult);
     }
 }
