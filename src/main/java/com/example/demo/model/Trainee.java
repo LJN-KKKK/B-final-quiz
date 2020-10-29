@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -21,4 +22,7 @@ public class Trainee {
 
     @NotEmpty(message = "name不能为空")
     private String name;
+
+    @JsonIgnore
+    private boolean grouped;
 }
