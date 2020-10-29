@@ -16,8 +16,7 @@ public class TrainerService {
     }
 
     public Trainer addTrainer(Trainer trainer) {
-        trainerRepository.save(trainer);
-        return trainer;
+        return trainerRepository.save(trainer);
     }
 
     public List<Trainer> getAllTrainersByGrouped(boolean grouped) {

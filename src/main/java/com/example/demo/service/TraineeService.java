@@ -16,8 +16,7 @@ public class TraineeService {
     }
 
     public Trainee addTrainee(Trainee trainee) {
-        traineeRepository.save(trainee);
-        return trainee;
+        return traineeRepository.save(trainee);
     }
 
     public List<Trainee> getAllTraineesByGrouped(boolean grouped) {
