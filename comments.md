@@ -9,7 +9,6 @@
 * 对三层架构的掌握不错
 * 对RESTful实践的掌握不错
 * 对Spring MVC注解的掌握不错
-* 对Stream的掌握不错
 * 对异常处理的掌握不错
 *  @OneToMany和@ManyToOne不一定要成对出现，加深一下关系映射的理解。
 * 根据restful规范，资源表名是复数形式
