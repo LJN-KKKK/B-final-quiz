@@ -12,6 +12,7 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+//TODO GTB-知识点: * 根据restful规范，资源表名是复数形式
 public class Trainer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

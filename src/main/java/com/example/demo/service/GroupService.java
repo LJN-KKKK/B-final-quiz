@@ -31,6 +31,7 @@ public class GroupService {
 
         reSetGroup(trainerList, traineeList);
 
+        //TODO GTB-工程实践: - GroupService.java:34 可以抽取一个方法，让代码可读性更高
         int traineeNum = traineeList.size();
         int trainerNum = trainerList.size();
 

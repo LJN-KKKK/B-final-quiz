@@ -23,6 +23,7 @@ public class Group {
     @NotEmpty(message = "name不能为空")
     private String name;
 
+    //TODO GTB-知识点: *  @OneToMany和@ManyToOne不一定要成对出现，加深一下关系映射的理解。
     @OneToMany(mappedBy = "group")
     private List<Trainer> trainers;
 
